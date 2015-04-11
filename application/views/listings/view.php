@@ -1,0 +1,1 @@
+<h2><?php echo $listing_item['title']?></h2>

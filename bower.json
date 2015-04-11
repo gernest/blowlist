@@ -1,0 +1,23 @@
+{
+  "name": "blowlist",
+  "version": "0.0.0",
+  "authors": [
+    "gernest <geofreyernest@live.com>"
+  ],
+  "description": "A job listing app with codeigniter and php",
+  "keywords": [
+    "codeigniter",
+    "php"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+    "primer-css":"2.0.3"
+  }
+}
