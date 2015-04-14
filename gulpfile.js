@@ -18,7 +18,7 @@ gulp.task('watch', function(){
 });
 
 gulp.task('clean',function(cb){
-    clean(['./dest/**/*'],cb);
+    clean(['./dist/**/*'],cb);
 });
 
 var baseProject=[
@@ -29,7 +29,7 @@ var baseProject=[
 ];
 gulp.task('move',['clean'], function(){
     gulp.src(baseProject,{base:'./'})
-        .pipe(gulp.dest('dest'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('dist',['move']);

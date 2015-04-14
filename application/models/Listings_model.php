@@ -13,14 +13,25 @@ class Listings_model extends CI_Model{
         parent::__construct();
         $this->load->database();
     }
-    public function get_listings($slug=FALSE)
+    public function get_listings($id=FALSE)
     {
-        if ($slug===FALSE)
+        if ($id===FALSE)
         {
             $query=$this->db->get('listings');
             return $query->result_array();
         }
-        $query=$this->db->get_where('listings',array('slug'=>$slug));
+        $query=$this->db->get_where('listings',array('id'=>$id));
         return$query->row_array();
+    }
+    public function set_listings()
+    {
+        $this->load->helper('url');
+        $slug=url_title($this->input->post('title'),'dash',TRUE);
+        $data=array(
+            'title'=>$this->input->post('title'),
+            'slug'=>$slug,
+            'description'=>$this->input->post('description')
+        );
+        return $this->db->insert('listings',$data);
     }
 }
